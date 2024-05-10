@@ -58,7 +58,7 @@ pub struct UpdateUserNftRequest{
 
 ```bash
 TIMESTAMP=$(date +%s)
-sudo docker build -t mints-actor-worker-$TIMESTAMP -f . --no-cache
+sudo docker build -t mints-actor-worker-$TIMESTAMP . --no-cache
 sudo docker run -d --restart unless-stopped --network hoopoe --name mints-actor-worker-$TIMESTAMP mints-actor-worker-$TIMESTAMP
 
 sudo docker run -d --network hoopoe --hostname rabbitmq -p 5672:5672 -p 15672:15672 --name rabbitmq -e RABBITMQ_DEFAULT_USER=hoopoe -e RABBITMQ_DEFAULT_PASS=geDteDd0Ltg2135FJYQ6rjNYHYkGQa70 rabbitmq:3-management
